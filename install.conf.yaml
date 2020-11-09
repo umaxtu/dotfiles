@@ -1,3 +1,38 @@
-- clean: []
-- link: {}
-- shell: []
+- defaults:
+    link:
+      create: true
+      relink: true
+      force: true
+
+- create:
+    - ~/Build
+    - ~/Code
+    - ~/.local/bin
+    - ~/org
+
+- clean:
+    ~/:
+      force: true
+    ~/.config:
+      recursive: true
+
+- link:
+    ~/.bashrc:
+      path: config/bashrc
+    ~/.config/alacritty/alacritty.yml:
+      path: config/alacritty.yml
+    ~/.config/neofetch/config.conf:
+      path: config/neofetch.conf
+    ~/.config/starship.toml:
+      path: config/starship.toml
+    ~/.profile:
+      path: config/profile
+    ~/.doom.d/:
+      glob: true
+      path: config/doom.d/*
+      relink: true
+
+- shell:
+    -
+      command: git submodule update --init --recursive
+      description: "Installing Submodules"
