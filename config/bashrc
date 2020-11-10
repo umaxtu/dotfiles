@@ -141,6 +141,6 @@ fi
 
 # Load starship prompt
 # For configuration info see https://starship.rs/config/#prompt
-if [ -x "$(starship --version)" ]; then
+if [ -x "$(command -v starship)" ]; then
     eval "$(starship init bash)"
 fi
