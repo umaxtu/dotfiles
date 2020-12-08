@@ -116,21 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Add ~/.local/bin to the path if it exists
-if [ -d "$HOME/.local/bin" ] ; then
-    PATH="$PATH:$HOME/.local/bin"
-fi
-
-# [ -n "$NNNLVL" ] && PS1="N$NNLVL $PS1"
-
-# Powerline stuff
-# if [ -f `which powerline-daemon` ]; then
-#         powerline-daemon -q
-#         POWERLINE_BASH_CONTINUATION=1
-#         POWERLINE_BASH_SELECT=1
-#         . /usr/share/powerline/bindings/bash/powerline.sh
-# fi
-
 if [ -d "$HOME/.emacs.d/bin" ]; then
         PATH="$PATH:$HOME/.emacs.d/bin"
 fi
